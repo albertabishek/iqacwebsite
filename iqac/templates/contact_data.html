@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+  Contact Data Page
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Messages</h2>
+
+    <!-- Table Layout -->
+    <table class="table table-striped messages-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for message in messages %}
+            <tr>
+                <td>{{ message.name }}</td>
+                <td>{{ message.email }}</td>
+                <td>{{ message.messages }}</td> <!-- Displaying each message -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Optional Custom CSS for Styling -->
+<style>
+    .messages-table th {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .messages-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .messages-table th, .messages-table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .container h2 {
+        color: #343a40;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}

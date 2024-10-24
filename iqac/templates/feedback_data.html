@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}
+  Feedback Data Page
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Feedbacks</h2>
+
+    <!-- Table Layout -->
+    <table class="table table-striped Feedbacks-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            <br>
+            {% for feedback in feedbacks %}
+            <tr>
+                <td>{{ feedback.category }}</td>
+                <td>{{ feedback.rating}}</td>
+                <td>{{ feedback.feedbacks }}</td> <!-- Displaying each Feedback -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Optional Custom CSS for Styling -->
+<style>
+    .Feedbacks-table th {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .Feedbacks-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .Feedbacks-table th, .Feedbacks-table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .container h2 {
+        color: #343a40;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
